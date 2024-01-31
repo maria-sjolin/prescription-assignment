@@ -1,0 +1,55 @@
+@import '../components/Wrappers.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  gap: 36px;
+  text-align: left;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+}
+
+.backButton {
+  position: absolute;
+  border: none;
+  background: none;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.prescriberHeading {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.prescriberParagraph {
+  border-bottom: 1px solid #d0cccc;
+  padding-bottom: 16px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.detailedListWrapper {
+  background: #9cc4cd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: calc(100% - 32px);
+}
+
+.stockStatusWrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}

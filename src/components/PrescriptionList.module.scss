@@ -1,0 +1,32 @@
+@import '../components/Wrappers.scss';
+@import '../components/Variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+}
+
+.marginLeft {
+  margin-left: $spacing-s;
+}
+
+.marginRight {
+  margin-right: $spacing-s;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.separator {
+  border-top: 1px solid #d0cccc;
+  width: 100%;
+  margin-top: 24px;
+}

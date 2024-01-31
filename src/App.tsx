@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import DetailedView from './views/DetailedView';
+import PrescriptionView from './views/PrescriptionsView';
 
 function App() {
+  const [view, setView] = useState('prescriptions-view');
+
+  const navigate = (view: string) => {
+    setView(view);
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [view]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {view === 'prescriptions-view' && (
+        <PrescriptionView navigate={navigate} />
+      )}
+      {view === 'detailed-view' && (
+        <DetailedView navigate={navigate} />
+      )}
+
     </div>
   );
 }

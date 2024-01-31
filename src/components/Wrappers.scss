@@ -1,0 +1,39 @@
+@import './Variables.scss';
+
+.sideWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 16px 16px 24px;
+  width: 100%;
+  max-width: calc(100% - 32px);
+  background: #edeeee;
+  border-radius: 8px;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  @media (min-width: $breakpoint-md) {
+    width: 30%;
+  }
+}
+
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    width: 70%;
+  }
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}

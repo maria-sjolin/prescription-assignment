@@ -1,0 +1,42 @@
+@import './Variables.scss';
+
+.image {
+  width: 100vw;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.imageSmall {
+  @extend .image;
+  width: 100vw;
+
+  @media (min-width: $breakpoint-md) {
+
+    width: 40%;
+  }
+}
+
+.heroWithHeader {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+}
+
+.headerWrapper {
+  display: flex;
+  background-color: #176a7e;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  font-size: 40px;
+  color: white;
+
+  @media (min-width: $breakpoint-md) {
+
+    width: 60%;
+  }
+}
