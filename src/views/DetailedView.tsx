@@ -37,22 +37,22 @@ const DetailedView = ({ navigate }: PrescriptionItemProps) => {
     <>
       <Hero imgSrc={require('../assets/product-image.png')} header={prescription?.article.productName} />
       <Layout>
-        <button className={style.backButton} onClick={goBack}><FaChevronLeft /> Tillbaka</button>
+        <button className={style.backButton} onClick={goBack} data-testid="go-back-button"><FaChevronLeft /> Tillbaka</button>
 
         {prescription ? (
           <div className={style.container}>
             <aside className={style.sideWrapper}>
               <div className={style.prescriberHeading}><h2>Förskrivare</h2><FaUserDoctor className={style.icon} /></div>
 
-              <div>
+              <div data-testid="prescriber-info">
                 <p className={style.prescriberParagraph}><b>Namn:</b> {prescriber?.name}</p>
                 <p className={style.prescriberParagraph}><b>Yrke: </b>{prescriber?.profession}</p>
                 <p className={style.prescriberParagraph}><b>Arbetsplats: </b>{prescriber?.workplace}</p>
                 <p><b>Telefon: </b>{prescriber?.phoneNumber}</p>
               </div>
             </aside>
-            <div className={`${style.listWrapper} ${style.detailedListWrapper}`}>
-              <h1>{prescription.article.productName}</h1>
+            <div className={`${style.listWrapper} ${style.detailedListWrapper}`} data-testid="prescription-details">
+              <h2>{prescription.article.productName}</h2>
               <ul className={style.list}>
                 <li>
                   {prescription.article.stockStatus === StockStatus.InStock ? (

@@ -14,6 +14,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `npm run cypress:open`
+
+Runs e2e-tests with cypress. Opens a window, choose e2e-tests and browser and then click the file `prescriptions.cy.ts` which should automatically start the tests.
+Make sure you have the app running in development mode.
+
+
+The tests will rerun if you make edits.\
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\

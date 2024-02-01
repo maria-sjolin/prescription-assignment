@@ -10,10 +10,10 @@ const Hero = ({ imgSrc, header }: HeroProps) => {
   const imageClass = header ? style.imageSmall : style.image;
 
   return (
-    <div className={heroWrapperClass}>
+    <div className={heroWrapperClass} data-testid="hero">
       <img className={imageClass} src={imgSrc} alt="medicine" />
       {header && (
-        <div className={style.headerWrapper}>{header}</div>
+        <div className={style.headerWrapper}><h1 className={style.heading} data-testid="header">{header}</h1></div>
       )}
     </div>
   )

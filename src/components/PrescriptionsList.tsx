@@ -26,10 +26,10 @@ const PrescriptionsList = ({ navigate }: PrescriptionListProps) => {
 
   return (
     <Layout>
-      <h1>Recept</h1>
+      <h1 data-testid="header">Recept</h1>
       <div className={style.container}>
 
-        <aside className={style.sideWrapper}>
+        <aside className={style.sideWrapper} data-testid="filter-prescriptions-box">
           <div className={style.iconWrapper}><FaMagnifyingGlass /><h2>Sök</h2></div>
           <div>
             <label className={style.marginRight}> Produktnamn:</label>
@@ -38,12 +38,12 @@ const PrescriptionsList = ({ navigate }: PrescriptionListProps) => {
           <hr className={style.separator}></hr>
           <div className={style.iconWrapper}><FaFilter /><h2>Filtrera</h2></div>
           <div>
-            <input type="checkbox" id="filterStock" name="filterStock" checked={filterInStock} onChange={() => setFilterInStock(!filterInStock)} />
+            <input type="checkbox" id="filterStock" name="filterStock" checked={filterInStock} onChange={() => setFilterInStock(!filterInStock)} data-testid="filter" />
             <label className={style.marginLeft} htmlFor='filterStock'>Finns i lager</label>
           </div>
         </aside>
         <div className={style.listWrapper}>
-          <ul className={style.list}>
+          <ul className={style.list} data-testid="prescription-list">
             {prescriptionsToShow.map((prescription) => (
               prescription.article.productName.toLowerCase().includes(filterText.toLowerCase()) && (
                 <PrescriptionsItem key={prescription.prescriptionId} prescription={prescription} navigate={navigate} />

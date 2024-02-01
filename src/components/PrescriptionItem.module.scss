@@ -1,10 +1,12 @@
+@import './Variables.scss';
+
 .listItem {
   position: relative;
   background: #148924;
   color: white;
   border-radius: 8px;
   text-align: left;
-  padding: 16px 48px 16px 16px;
+  padding: $spacing-m $spacing-xl $spacing-m $spacing-m;
   cursor: pointer;
 
   &:hover {
@@ -25,6 +27,6 @@
   position: absolute;
   right: 0;
   bottom: calc(50% - 10px);
-  padding-right: 16px;
+  padding-right: $spacing-m;
   height: 20px;
 }

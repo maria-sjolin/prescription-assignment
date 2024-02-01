@@ -11,14 +11,14 @@ type PrescriptionItemProps = {
 const PrescriptionsItem = ({ prescription, navigate }: PrescriptionItemProps) => {
   const setActivePrescription = useStore((state) => state.setActivePrescription)
 
-  const liClasses = prescription.article.stockStatus === StockStatus.InStock ? style.listItem : `${style.listItem} ${style.outOfStock}`;
+  const liClasses = prescription.article.stockStatus === StockStatus.InStock ? `${style.listItem} in-stock` : `${style.listItem} ${style.outOfStock} out-of-stock`;
   const click = () => {
     setActivePrescription(prescription);
     navigate('detailed-view');
   }
 
   return (
-    <li className={liClasses} onClick={click} tabIndex={0}>
+    <li className={liClasses} onClick={click} tabIndex={0} data-testid="prescription-list-item">
       <h1 className={style.productName}>{prescription.article.productName}</h1>
       <span>{prescription.article.preamble}</span>
       <FaChevronRight className={style.icon} />
