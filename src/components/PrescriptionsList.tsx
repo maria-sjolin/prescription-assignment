@@ -1,12 +1,10 @@
 import PrescriptionsItem from './PrescriptionItem';
-import prescriptions from '../prescriptions.json';
+import prescriptions from '../api/prescriptions.json';
 import style from './PrescriptionList.module.scss';
 import { FormEvent, useState } from 'react';
 import Layout from './Layout';
 import { StockStatus } from '../types/types';
 import { FaMagnifyingGlass, FaFilter } from "react-icons/fa6";
-
-
 
 type PrescriptionListProps = {
   navigate: (view: string) => void;
